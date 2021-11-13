@@ -3,7 +3,6 @@ import { createClient } from 'contentful'
 
 import Layout from '../components/templates/Layout'
 import CardPost from '../components/molecules/CardPost'
-import { contentfulPosts } from '../lib/posts'
 
 const Blog: NextPage<any> = ({ posts }) => {
   return (
