@@ -1,0 +1,31 @@
+.articleHeader {
+  @apply tracking-wide;
+
+  h1 {
+    @apply text-4xl mb-6;
+  }
+}
+
+.articleBody {
+  @apply tracking-widest px-8;
+
+  h2 {
+    @apply text-3xl mt-10 mb-8 tracking-wide;
+  }
+
+  h3 {
+    @apply text-2xl mt-8 mb-6 tracking-wide;
+  }
+
+  li {
+    @apply text-sm text-gray-400;
+  }
+
+  pre {
+    @apply p-4 bg-gray-100;
+  }
+
+  p {
+    @apply my-4 text-lg leading-relaxed;
+  }
+}

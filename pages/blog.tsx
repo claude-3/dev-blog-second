@@ -3,17 +3,15 @@ import { createClient } from 'contentful'
 
 import Layout from '../components/templates/Layout'
 import CardPost from '../components/molecules/CardPost'
-import { useRecoilValue } from 'recoil'
-import { postsState } from '../components/util/state'
+import { contentfulPosts } from '../lib/posts'
 
-const Home: NextPage<any> = ({ posts }) => {
-  const postsList = useRecoilValue(postsState)
+const Blog: NextPage<any> = ({ posts }) => {
   return (
     <Layout title="Home page">
-      <h1 className="mb-8 text-4xl text-green-500">This is Home page</h1>
-      <p className="">新着記事一覧</p>
+      <h1 className="text-4xl text-green-500">This is Blog page</h1>
+
       <ul className="m-4">
-        {postsList.map((post: any) => (
+        {posts.map((post: any) => (
           <li key={post.sys.id} className="my-4">
             <CardPost
               title={post.fields.title}
@@ -29,7 +27,7 @@ const Home: NextPage<any> = ({ posts }) => {
   )
 }
 
-export default Home
+export default Blog
 
 export async function getStaticProps() {
   const client = createClient({
