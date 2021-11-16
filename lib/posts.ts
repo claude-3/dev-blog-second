@@ -1,7 +1,7 @@
 import { getClient } from './funcContentful'
 
 export const getAllPostsData = async () => {
-  const client = getClient()
+  const client = await getClient()
   const res = await client.getEntries({
     content_type: 'blogPost',
     order: 'fields.publishDate',
@@ -10,7 +10,7 @@ export const getAllPostsData = async () => {
 }
 
 export const getNewPostsData = async () => {
-  const client = getClient()
+  const client = await getClient()
   const res = await client.getEntries({
     content_type: 'blogPost',
     order: 'fields.publishDate',
@@ -20,7 +20,7 @@ export const getNewPostsData = async () => {
 }
 
 export const getCategoryPostsData = async (cateSlug: string) => {
-  const client = getClient()
+  const client = await getClient()
   const res = await client.getEntries({
     content_type: 'blogPost',
     order: 'fields.publishDate',
