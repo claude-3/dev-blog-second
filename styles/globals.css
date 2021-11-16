@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    @apply text-gray-700;
+  }
+
+  a {
+    @apply transition duration-500;
+  }
+
+  .text-title {
+    @apply text-gray-900 font-medium;
+  }
+}

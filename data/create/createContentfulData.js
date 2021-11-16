@@ -9,7 +9,10 @@ const getContentfuldata = async () => {
   })
   const res = await client.getEntries({
     content_type: 'blogPost',
-    order: '-fields.publishDate',
+    order: 'fields.publishDate',
+    limit: 10,
+    // 'fields.category.sys.contentType.sys.id': 'category',
+    // 'fields.category.fields.slug': 'affiliate',
   })
 
   return res.items

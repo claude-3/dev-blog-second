@@ -6,29 +6,23 @@ const Header: VFC = () => {
   return (
     <div className="p-4">
       <LContent>
-        <ul className="flex">
-          <li>
-            <Link href="/">
-              <a className="p-4 hover:text-green-400 transition duration-200">
-                Home
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/blog">
-              <a className="p-4 hover:text-green-400 transition duration-200">
-                Blog
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/">
-              <a className="p-4 hover:text-green-400 transition duration-200">
-                Contact
-              </a>
-            </Link>
-          </li>
-        </ul>
+        <nav className="flex">
+          <Link href="/">
+            <a className="p-2 text-title font-bold border-b-4 border-transparent hover:border-current">
+              Home
+            </a>
+          </Link>
+          <Link href="/blog">
+            <a className="ml-2 p-2 text-title font-bold border-b-4 border-transparent hover:border-current">
+              Blog
+            </a>
+          </Link>
+          <Link href="/">
+            <a className="ml-2 p-2 text-title font-bold border-b-4 border-transparent hover:border-current">
+              Contact
+            </a>
+          </Link>
+        </nav>
       </LContent>
     </div>
   )

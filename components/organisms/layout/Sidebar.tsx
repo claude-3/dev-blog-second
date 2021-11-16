@@ -9,7 +9,7 @@ const Sidebar: VFC = () => {
   const postsList = useRecoilValue(postsState)
 
   return (
-    <aside className="hidden lg:block lg:w-80 ml-14 min-h-{50vh} shadow">
+    <div className="shadow-md">
       <p className="text-lg">サイドバー</p>
       {postsList && (
         <ul>
@@ -18,7 +18,7 @@ const Sidebar: VFC = () => {
           ))}
         </ul>
       )}
-    </aside>
+    </div>
   )
 }
 
