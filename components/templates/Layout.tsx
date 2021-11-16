@@ -15,10 +15,10 @@ const Layout: VFC<Props> = ({ children, title = 'Page title' }) => {
     <div className="">
       <Head>
         <title>{title}</title>
-        <link
+        {/* <link
           href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans:wght@400;700&display=swap"
           rel="stylesheet"
-        ></link>
+        ></link> */}
       </Head>
       <Header />
       <div className="h-80 flex justify-center items-center">

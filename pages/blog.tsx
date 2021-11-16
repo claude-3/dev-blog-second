@@ -6,7 +6,7 @@ import CardPost from '../components/molecules/CardPost'
 
 const Blog: NextPage<any> = ({ posts }) => {
   return (
-    <Layout title="Home page">
+    <Layout title="Blog page">
       <h1 className="text-4xl text-green-500">This is Blog page</h1>
 
       <ul className="m-4">
