@@ -17,13 +17,6 @@ const Layout: VFC<Props> = ({ children, title = 'Page title' }) => {
         <title>{title}</title>
       </Head>
       <Header />
-      <div className="h-40 md:h-80 flex justify-center items-center">
-        <div className="p4">
-          <p className="text-title text-5xl md:text-8xl lg:text-9xl tracking-tight">
-            ClaudeWEB
-          </p>
-        </div>
-      </div>
       <div className="mt-10">
         <LContent>
           <div className="grid lg:grid-cols-base gap-14">

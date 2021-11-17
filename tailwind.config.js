@@ -9,8 +9,12 @@ module.exports = {
       colors: {
         primary: '#0e344d',
         secondary: '#ebbd9e',
-        tertiary: '#083D77',
+        tertiary: '#b9a68b',
         quaternary: '#FFE19C',
+        // primary: '#0e344d',
+        // secondary: '#ebbd9e',
+        // tertiary: '#083D77',
+        // quaternary: '#FFE19C',
       },
       gridTemplateColumns: {
         base: '1fr 300px',

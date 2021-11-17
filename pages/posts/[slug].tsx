@@ -4,7 +4,7 @@ import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
 
 import postStyles from '../../styles/post.module.scss'
-import Layout from '../../components/templates/Layout'
+import LayoutPost from '../../components/templates/LayoutPost'
 import Test from '../../components/blog/Test'
 
 const components = {
@@ -52,31 +52,50 @@ export async function getStaticProps({ params }: any) {
 }
 
 export default function PostDetails({ post, source }: any) {
-  const { eyecatch, title } = post.fields
+  const { eyecatch, title, description } = post.fields
+  const category = post.fields.category.fields.name
   const publishDate = new Date(post.fields.publishDate).toLocaleDateString()
   const updatedAt = new Date(post.sys.updatedAt).toLocaleDateString()
-  // console.log(post.fields)
+  const imgSrc = `https:${eyecatch.fields.file.url}`
+  const imgW = eyecatch.fields.file.details.image.width
+  const imgH = eyecatch.fields.file.details.image.height
+  const imgAlt = eyecatch.fields.description
 
   return (
     <>
-      <Layout title={title}>
-        <div className={postStyles.articleHeader}>
-          <Image
-            src={'https:' + eyecatch.fields.file.url}
-            width={eyecatch.fields.file.details.image.width}
-            height={eyecatch.fields.file.details.image.height}
-            alt={eyecatch.fields.description}
-          />
-          <h1>{title}</h1>
-          <div>
-            <p>投稿日：{publishDate}</p>
-            <p>最終更新：{updatedAt}</p>
+      <LayoutPost title={title}>
+        <div className="p-4">
+          <div className={postStyles.articleHeader}>
+            <div className="border-t border-b border-gray-200 mb-8 py-6 flex flex-col items-center">
+              <p className="text-xl md:text-2xl font-bold mb-3 px-6 tracking-tight">
+                {category}
+              </p>
+              <div className="flex justify-center text-gray-500">
+                <p className="p-1 text-sm text-tertiary border-2 border-tertiary">
+                  投稿：{publishDate}
+                </p>
+                <p className="ml-2 p-1 text-sm text-tertiary border-2 border-tertiary">
+                  最終更新：{updatedAt}
+                </p>
+              </div>
+            </div>
+            <div className="mb-10">
+              <h1 className="text-xl md:text-2xl lg:text-3xl font-bold leading-relaxed md:leading-relaxed lg:leading-relaxed">
+                {title}
+              </h1>
+            </div>
+            <div className="mb-10 px-4 md:px-8">
+              <p className="text-base md:text-lg leading-relaxed md:leading-relaxed">
+                {description}
+              </p>
+            </div>
+            <Image src={imgSrc} width={imgW} height={imgH} alt={imgAlt} />
+          </div>
+          <div className={postStyles.articleBody}>
+            <MDXRemote {...source} components={components} />
           </div>
         </div>
-        <div className={postStyles.articleBody}>
-          <MDXRemote {...source} components={components} />
-        </div>
-      </Layout>
+      </LayoutPost>
     </>
   )
 }
