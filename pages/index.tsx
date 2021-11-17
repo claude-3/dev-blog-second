@@ -4,6 +4,7 @@ import Link from 'next/link'
 
 import Layout from '../components/templates/Layout'
 import { getNewPostsData, getCategoryPostsData } from '../lib/posts'
+import CardThumb from '../components/molecules/CardThumb'
 
 const Home: NextPage<any> = ({
   newPosts,
@@ -16,48 +17,40 @@ const Home: NextPage<any> = ({
       <section>
         <div className="p-4">
           <div className="mb-4 pb-2">
-            <h2 className="text-5xl text-title">Articles</h2>
-            <p className="text-primary">新着記事一覧</p>
+            <h2 className="text-5xl text-title rotate-90">Articles</h2>
+            <p className="text-primary">新着記事</p>
           </div>
           <div className="">
-            <div className="grid md:grid-cols-3 gap-3">
-              {newPosts.map((post: any) => (
-                <div className="" key={post.sys.id}>
-                  <Link href={`/posts/${post.fields.slug}`}>
-                    <a className="block hover:opacity-60">
-                      <div className="overflow-hidden rounded-md shadow-lg">
-                        <Image
-                          src={'https:' + post.fields.eyecatch.fields.file.url}
-                          alt={post.fields.eyecatch.fields.description}
-                          width={
-                            post.fields.eyecatch.fields.file.details.image.width
-                          }
-                          height={
-                            post.fields.eyecatch.fields.file.details.image
-                              .height
-                          }
-                        />
-                        <div className="p-6">
-                          <p className="tracking-widest text-xs mb-1">
-                            {post.fields.publishDate}
-                          </p>
-                          <h1 className="text-title text-lg mb-3">
-                            {post.fields.title}
-                          </h1>
-                          <p className="mb-3 text-sm">
-                            ここに説明文が入る。ここに説明文が入る。
-                            ここに説明文が入る。 ここに説明文が入る。
-                            ここに説明文が入る。
-                          </p>
-                          <h2 className="text-xs">
-                            {post.fields.category.fields.name}
-                          </h2>
-                        </div>
-                      </div>
-                    </a>
-                  </Link>
-                </div>
-              ))}
+            <div className="grid md:grid-cols-2 gap-4">
+              {newPosts.map((post: any, index: number) => {
+                const postProps = {
+                  number: index,
+                  id: post.sys.id,
+                  slug: post.fields.slug,
+                  imgUrl: `https:${post.fields.eyecatch.fields.file.url}`,
+                  imgAlt: post.fields.eyecatch.fields.description,
+                  imgW: post.fields.eyecatch.fields.file.details.image.width,
+                  imgH: post.fields.eyecatch.fields.file.details.image.height,
+                  publishDate: post.fields.publishDate,
+                  title: post.fields.title,
+                  category: post.fields.category.fields.name,
+                  indexFirst: index <= 1,
+                }
+                return (
+                  <CardThumb
+                    key={postProps.id}
+                    slug={postProps.slug}
+                    imgUrl={postProps.imgUrl}
+                    imgAlt={postProps.imgAlt}
+                    imgW={postProps.imgW}
+                    imgH={postProps.imgH}
+                    publishDate={postProps.publishDate}
+                    title={postProps.title}
+                    category={postProps.category}
+                    indexFirst={postProps.indexFirst}
+                  />
+                )
+              })}
             </div>
           </div>
         </div>
@@ -70,43 +63,7 @@ const Home: NextPage<any> = ({
           </div>
           <div className="">
             <div className="grid md:grid-cols-3 gap-3">
-              {cateFirstPosts.map((post: any) => (
-                <div className="" key={post.sys.id}>
-                  <Link href={`/posts/${post.fields.slug}`}>
-                    <a className="block hover:opacity-60">
-                      <div className="overflow-hidden rounded-md shadow-lg">
-                        <Image
-                          src={'https:' + post.fields.eyecatch.fields.file.url}
-                          alt={post.fields.eyecatch.fields.description}
-                          width={
-                            post.fields.eyecatch.fields.file.details.image.width
-                          }
-                          height={
-                            post.fields.eyecatch.fields.file.details.image
-                              .height
-                          }
-                        />
-                        <div className="p-6">
-                          <p className="tracking-widest text-xs mb-1">
-                            {post.fields.publishDate}
-                          </p>
-                          <h1 className="text-title text-lg mb-3">
-                            {post.fields.title}
-                          </h1>
-                          <p className="mb-3 text-sm">
-                            ここに説明文が入る。ここに説明文が入る。
-                            ここに説明文が入る。 ここに説明文が入る。
-                            ここに説明文が入る。
-                          </p>
-                          <h2 className="text-xs">
-                            {post.fields.category.fields.name}
-                          </h2>
-                        </div>
-                      </div>
-                    </a>
-                  </Link>
-                </div>
-              ))}
+              <p>工事中...</p>
             </div>
           </div>
         </div>
@@ -121,43 +78,7 @@ const Home: NextPage<any> = ({
           </div>
           <div className="">
             <div className="grid md:grid-cols-3 gap-3">
-              {cateSecondPosts.map((post: any) => (
-                <div className="" key={post.sys.id}>
-                  <Link href={`/posts/${post.fields.slug}`}>
-                    <a className="block hover:opacity-60">
-                      <div className="overflow-hidden rounded-md shadow-lg">
-                        <Image
-                          src={'https:' + post.fields.eyecatch.fields.file.url}
-                          alt={post.fields.eyecatch.fields.description}
-                          width={
-                            post.fields.eyecatch.fields.file.details.image.width
-                          }
-                          height={
-                            post.fields.eyecatch.fields.file.details.image
-                              .height
-                          }
-                        />
-                        <div className="p-6">
-                          <p className="tracking-widest text-xs mb-1">
-                            {post.fields.publishDate}
-                          </p>
-                          <h1 className="text-title text-lg mb-3">
-                            {post.fields.title}
-                          </h1>
-                          <p className="mb-3 text-sm">
-                            ここに説明文が入る。ここに説明文が入る。
-                            ここに説明文が入る。 ここに説明文が入る。
-                            ここに説明文が入る。
-                          </p>
-                          <h2 className="text-xs">
-                            {post.fields.category.fields.name}
-                          </h2>
-                        </div>
-                      </div>
-                    </a>
-                  </Link>
-                </div>
-              ))}
+              <p>工事中...</p>
             </div>
           </div>
         </div>

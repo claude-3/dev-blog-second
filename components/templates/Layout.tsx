@@ -26,7 +26,7 @@ const Layout: VFC<Props> = ({ children, title = 'Page title' }) => {
       </div>
       <div className="mt-10">
         <LContent>
-          <div className="grid lg:grid-cols-base gap-14">
+          <div className="grid lg:grid-cols-base gap-10">
             <main className="min-h-screen">{children}</main>
             <aside className="hidden lg:block">
               <Sidebar />

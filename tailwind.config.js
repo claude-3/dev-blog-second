@@ -9,8 +9,9 @@ module.exports = {
       colors: {
         primary: '#0e344d',
         secondary: '#ebbd9e',
-        tertiary: '#b9a68b',
-        quaternary: '#FFE19C',
+        tertiary: '#C16200',
+        quaternary: '#6B9080',
+        myPink: '#ED254E',
         // primary: '#0e344d',
         // secondary: '#ebbd9e',
         // tertiary: '#083D77',
@@ -19,6 +20,7 @@ module.exports = {
       gridTemplateColumns: {
         base: '1fr 300px',
       },
+      transform: ['hover', 'focus'],
     },
   },
   variants: {
