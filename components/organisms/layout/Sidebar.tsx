@@ -5,30 +5,38 @@ import { postsState } from '../../util/state'
 import Link from 'next/link'
 
 const Sidebar: VFC = () => {
-  // const contentfulPostsData = (useContext(ContentfulContext)).contentfulData
-  // const postsList = useContext(ContentfulContext).contentfulData
   const postsList = useRecoilValue(postsState)
 
   return (
-    <div className="shadow-md p-4">
-      <p className="text-lg mb-6">サイドバー</p>
+    <div className="p-4">
       {postsList && (
-        <ul>
-          {postsList.map((post: any, index) => (
-            <li key={post.sys.id} className={`${index && 'mt-3'}`}>
-              <Link href={`/posts/${post.fields.slug}`}>
-                <a className="block">
-                  <div>
-                    <p className="text-sm font-bold">{post.fields.title}</p>
-                    <p className="mt-1 text-xs text-gray-500">
-                      {post.fields.category.fields.name}
-                    </p>
-                  </div>
-                </a>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div className="">
+          <p className="text-title text-lg border-b-4 border-myOrange">
+            新着記事
+          </p>
+          <ul className="py-4">
+            {postsList.map((post: any, index) => (
+              <li
+                key={post.sys.id}
+                className={`${index && 'mt-3 pt-3 border-t border-myGray'}`}
+              >
+                <Link href={`/posts/${post.fields.slug}`}>
+                  <a className="block transform hover:translate-x-3">
+                    <div>
+                      <p className="text-xs text-myNavy">
+                        {new Date(post.fields.publishDate).toLocaleDateString()}
+                      </p>
+                      <p className="text-sm font-bold">{post.fields.title}</p>
+                      <p className="mt-1 text-xs bg-myGray inline-block p-1">
+                        {post.fields.category.fields.name}
+                      </p>
+                    </div>
+                  </a>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       )}
     </div>
   )

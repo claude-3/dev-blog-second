@@ -8,17 +8,17 @@ const Header: VFC = () => {
       <LContent>
         <nav className="flex">
           <Link href="/">
-            <a className="p-2 text-title font-bold border-b-4 border-transparent hover:border-current">
+            <a className="p-2 text-title font-bold border-b-4 border-transparent hover:border-myBlack">
               Home
             </a>
           </Link>
           <Link href="/blog">
-            <a className="ml-2 p-2 text-title font-bold border-b-4 border-transparent hover:border-current">
+            <a className="ml-2 p-2 text-title font-bold border-b-4 border-transparent hover:border-myBlack">
               Blog
             </a>
           </Link>
           <Link href="/">
-            <a className="ml-2 p-2 text-title font-bold border-b-4 border-transparent hover:border-current">
+            <a className="ml-2 p-2 text-title font-bold border-b-4 border-transparent hover:border-myBlack">
               Contact
             </a>
           </Link>

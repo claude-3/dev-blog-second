@@ -35,16 +35,16 @@ const CardThumb: VFC<Props> = (props) => {
               <Image src={imgUrl} alt={imgAlt} width={imgW} height={imgH} />
             </div>
             <div className="p-6 h-full">
-              <p className="tracking-widest text-xs mb-1 text-gray-700">
+              <p className="tracking-wider mb-1 text-myNavy">
                 {indexFirst && (
-                  <span className="tracking-tight text-myPink mr-2 border border-myPink px-1">
+                  <span className="tracking-tight text-myOrange mr-2 border border-myOrange px-1">
                     NEW
                   </span>
                 )}
                 {publishDate}
               </p>
               <p className="text-title text-lg mb-3">{title}</p>
-              <p className="py-1 px-2 text-center rounded bg-blue-50 text-blue-500 text-xs font-medium tracking-widest">
+              <p className="py-1 px-2 text-center rounded bg-myGray text-xs font-medium tracking-widest">
                 {category}
               </p>
             </div>

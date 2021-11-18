@@ -66,15 +66,15 @@ export default function PostDetails({ post, source }: any) {
       <LayoutPost title={title}>
         <div className="p-4">
           <div className={postStyles.articleHeader}>
-            <div className="border-t border-b border-gray-200 mb-8 py-6 flex flex-col items-center">
-              <p className="text-xl md:text-2xl font-bold mb-3 px-6 tracking-tight">
+            <div className="border-t border-b border-myGray mb-6 py-6 flex flex-col items-center">
+              <p className="text-xl md:text-2xl text-myNavy font-bold mb-3 px-6 tracking-tight">
                 {category}
               </p>
               <div className="flex justify-center text-gray-500">
-                <p className="p-1 text-sm text-tertiary border-2 border-tertiary">
+                <p className="p-1 text-sm text-myBrown bg-myGray">
                   投稿：{publishDate}
                 </p>
-                <p className="ml-2 p-1 text-sm text-tertiary border-2 border-tertiary">
+                <p className="ml-2 p-1 text-sm text-myBrown bg-myGray">
                   最終更新：{updatedAt}
                 </p>
               </div>

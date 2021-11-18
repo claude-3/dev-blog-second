@@ -52,7 +52,7 @@
           "id": "3jzBguqOoAMvjsXFN5rnyM",
           "type": "Asset",
           "createdAt": "2021-11-15T12:01:52.029Z",
-          "updatedAt": "2021-11-15T12:01:52.029Z",
+          "updatedAt": "2021-11-18T09:19:34.182Z",
           "environment": {
             "sys": {
               "id": "master",
@@ -60,18 +60,18 @@
               "linkType": "Environment"
             }
           },
-          "revision": 1,
+          "revision": 2,
           "locale": "ja-JP"
         },
         "fields": {
           "title": "sample1",
           "file": {
-            "url": "//images.ctfassets.net/f27sgrfn6bwv/3jzBguqOoAMvjsXFN5rnyM/570689d6e167d6ad1371ddf148bb4065/sample1.jpg",
+            "url": "//images.ctfassets.net/f27sgrfn6bwv/3jzBguqOoAMvjsXFN5rnyM/90081fa80d982d223ece68cea426ad48/sample1.jpg",
             "details": {
-              "size": 178858,
+              "size": 220412,
               "image": {
                 "width": 1200,
-                "height": 630
+                "height": 840
               }
             },
             "fileName": "sample1.jpg",

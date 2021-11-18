@@ -27,9 +27,6 @@ const Layout: VFC<Props> = ({ children, title = 'Page title' }) => {
           </div>
         </LContent>
       </div>
-      <div className="h-80 bg-gray-300 flex justify-center items-center">
-        <p className="text-2xl">Bottom area</p>
-      </div>
       <Footer />
     </div>
   )
