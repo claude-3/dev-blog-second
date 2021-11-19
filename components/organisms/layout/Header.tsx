@@ -1,11 +1,11 @@
-import { memo, VFC } from 'react'
+import { memo, VFC, useState } from 'react'
 import Link from 'next/link'
-import LContent from '../../templates/layout/LContent'
+import MobileMenus from '../../molecules/MobileMenus'
 
 const Header: VFC = () => {
   return (
-    <div className="p-4">
-      <LContent>
+    <div className="relative z-20">
+      <div className="hidden content p-4 md:block">
         <nav className="flex">
           <Link href="/">
             <a className="p-2 text-title font-bold border-b-4 border-transparent hover:border-myBlack">
@@ -23,7 +23,8 @@ const Header: VFC = () => {
             </a>
           </Link>
         </nav>
-      </LContent>
+      </div>
+      <MobileMenus />
     </div>
   )
 }

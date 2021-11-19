@@ -1,7 +1,29 @@
 [
   {
     "metadata": {
-      "tags": []
+      "tags": [
+        {
+          "sys": {
+            "type": "Link",
+            "linkType": "Tag",
+            "id": "free-material"
+          }
+        },
+        {
+          "sys": {
+            "type": "Link",
+            "linkType": "Tag",
+            "id": "howto"
+          }
+        },
+        {
+          "sys": {
+            "type": "Link",
+            "linkType": "Tag",
+            "id": "seo"
+          }
+        }
+      ]
     },
     "sys": {
       "space": {
@@ -14,7 +36,7 @@
       "id": "166Qu48ZQjcFcBFbK2fkHp",
       "type": "Entry",
       "createdAt": "2021-11-10T10:12:11.520Z",
-      "updatedAt": "2021-11-17T02:35:38.275Z",
+      "updatedAt": "2021-11-19T02:52:37.047Z",
       "environment": {
         "sys": {
           "id": "master",
@@ -22,7 +44,7 @@
           "linkType": "Environment"
         }
       },
-      "revision": 11,
+      "revision": 12,
       "contentType": {
         "sys": {
           "type": "Link",
@@ -122,7 +144,29 @@
   },
   {
     "metadata": {
-      "tags": []
+      "tags": [
+        {
+          "sys": {
+            "type": "Link",
+            "linkType": "Tag",
+            "id": "apple"
+          }
+        },
+        {
+          "sys": {
+            "type": "Link",
+            "linkType": "Tag",
+            "id": "money"
+          }
+        },
+        {
+          "sys": {
+            "type": "Link",
+            "linkType": "Tag",
+            "id": "writing"
+          }
+        }
+      ]
     },
     "sys": {
       "space": {
@@ -135,7 +179,7 @@
       "id": "7yQSzU1sCYUHSUmymTTsba",
       "type": "Entry",
       "createdAt": "2021-11-10T10:16:15.357Z",
-      "updatedAt": "2021-11-17T08:21:41.036Z",
+      "updatedAt": "2021-11-19T02:53:24.013Z",
       "environment": {
         "sys": {
           "id": "master",
@@ -143,7 +187,7 @@
           "linkType": "Environment"
         }
       },
-      "revision": 6,
+      "revision": 7,
       "contentType": {
         "sys": {
           "type": "Link",
@@ -243,7 +287,22 @@
   },
   {
     "metadata": {
-      "tags": []
+      "tags": [
+        {
+          "sys": {
+            "type": "Link",
+            "linkType": "Tag",
+            "id": "mac"
+          }
+        },
+        {
+          "sys": {
+            "type": "Link",
+            "linkType": "Tag",
+            "id": "recommend"
+          }
+        }
+      ]
     },
     "sys": {
       "space": {
@@ -256,7 +315,7 @@
       "id": "4puWpPV1Q1qxorSuTKTuLM",
       "type": "Entry",
       "createdAt": "2021-11-10T10:17:31.331Z",
-      "updatedAt": "2021-11-17T08:22:06.030Z",
+      "updatedAt": "2021-11-19T02:53:46.824Z",
       "environment": {
         "sys": {
           "id": "master",
@@ -264,7 +323,7 @@
           "linkType": "Environment"
         }
       },
-      "revision": 6,
+      "revision": 7,
       "contentType": {
         "sys": {
           "type": "Link",
@@ -364,7 +423,36 @@
   },
   {
     "metadata": {
-      "tags": []
+      "tags": [
+        {
+          "sys": {
+            "type": "Link",
+            "linkType": "Tag",
+            "id": "howto"
+          }
+        },
+        {
+          "sys": {
+            "type": "Link",
+            "linkType": "Tag",
+            "id": "money"
+          }
+        },
+        {
+          "sys": {
+            "type": "Link",
+            "linkType": "Tag",
+            "id": "recommend"
+          }
+        },
+        {
+          "sys": {
+            "type": "Link",
+            "linkType": "Tag",
+            "id": "seo"
+          }
+        }
+      ]
     },
     "sys": {
       "space": {
@@ -377,7 +465,7 @@
       "id": "6pmMzZ8tvLTxmcIFFclNQa",
       "type": "Entry",
       "createdAt": "2021-11-15T12:13:59.610Z",
-      "updatedAt": "2021-11-17T08:22:25.388Z",
+      "updatedAt": "2021-11-19T02:54:06.401Z",
       "environment": {
         "sys": {
           "id": "master",
@@ -385,7 +473,7 @@
           "linkType": "Environment"
         }
       },
-      "revision": 4,
+      "revision": 5,
       "contentType": {
         "sys": {
           "type": "Link",
@@ -485,7 +573,36 @@
   },
   {
     "metadata": {
-      "tags": []
+      "tags": [
+        {
+          "sys": {
+            "type": "Link",
+            "linkType": "Tag",
+            "id": "book"
+          }
+        },
+        {
+          "sys": {
+            "type": "Link",
+            "linkType": "Tag",
+            "id": "howto"
+          }
+        },
+        {
+          "sys": {
+            "type": "Link",
+            "linkType": "Tag",
+            "id": "seo"
+          }
+        },
+        {
+          "sys": {
+            "type": "Link",
+            "linkType": "Tag",
+            "id": "writing"
+          }
+        }
+      ]
     },
     "sys": {
       "space": {
@@ -498,7 +615,7 @@
       "id": "2kQCYeeY1w4SZirHpyDdRH",
       "type": "Entry",
       "createdAt": "2021-11-15T12:16:00.314Z",
-      "updatedAt": "2021-11-17T08:22:44.091Z",
+      "updatedAt": "2021-11-19T02:54:37.508Z",
       "environment": {
         "sys": {
           "id": "master",
@@ -506,7 +623,7 @@
           "linkType": "Environment"
         }
       },
-      "revision": 4,
+      "revision": 5,
       "contentType": {
         "sys": {
           "type": "Link",
@@ -606,7 +723,29 @@
   },
   {
     "metadata": {
-      "tags": []
+      "tags": [
+        {
+          "sys": {
+            "type": "Link",
+            "linkType": "Tag",
+            "id": "consideration"
+          }
+        },
+        {
+          "sys": {
+            "type": "Link",
+            "linkType": "Tag",
+            "id": "gadget"
+          }
+        },
+        {
+          "sys": {
+            "type": "Link",
+            "linkType": "Tag",
+            "id": "mac"
+          }
+        }
+      ]
     },
     "sys": {
       "space": {
@@ -619,7 +758,7 @@
       "id": "2itCeouawoSArDNh3RdCGn",
       "type": "Entry",
       "createdAt": "2021-11-15T12:17:20.742Z",
-      "updatedAt": "2021-11-17T08:23:03.994Z",
+      "updatedAt": "2021-11-19T02:59:28.023Z",
       "environment": {
         "sys": {
           "id": "master",
@@ -627,7 +766,7 @@
           "linkType": "Environment"
         }
       },
-      "revision": 4,
+      "revision": 5,
       "contentType": {
         "sys": {
           "type": "Link",
@@ -727,7 +866,43 @@
   },
   {
     "metadata": {
-      "tags": []
+      "tags": [
+        {
+          "sys": {
+            "type": "Link",
+            "linkType": "Tag",
+            "id": "book"
+          }
+        },
+        {
+          "sys": {
+            "type": "Link",
+            "linkType": "Tag",
+            "id": "consideration"
+          }
+        },
+        {
+          "sys": {
+            "type": "Link",
+            "linkType": "Tag",
+            "id": "free-material"
+          }
+        },
+        {
+          "sys": {
+            "type": "Link",
+            "linkType": "Tag",
+            "id": "iphone"
+          }
+        },
+        {
+          "sys": {
+            "type": "Link",
+            "linkType": "Tag",
+            "id": "seo"
+          }
+        }
+      ]
     },
     "sys": {
       "space": {
@@ -740,7 +915,7 @@
       "id": "3HiWgzwQe3BDzrUyK2Stmy",
       "type": "Entry",
       "createdAt": "2021-11-15T12:19:07.051Z",
-      "updatedAt": "2021-11-17T08:23:21.246Z",
+      "updatedAt": "2021-11-19T03:00:01.104Z",
       "environment": {
         "sys": {
           "id": "master",
@@ -748,7 +923,7 @@
           "linkType": "Environment"
         }
       },
-      "revision": 4,
+      "revision": 5,
       "contentType": {
         "sys": {
           "type": "Link",
@@ -848,7 +1023,36 @@
   },
   {
     "metadata": {
-      "tags": []
+      "tags": [
+        {
+          "sys": {
+            "type": "Link",
+            "linkType": "Tag",
+            "id": "book"
+          }
+        },
+        {
+          "sys": {
+            "type": "Link",
+            "linkType": "Tag",
+            "id": "mac"
+          }
+        },
+        {
+          "sys": {
+            "type": "Link",
+            "linkType": "Tag",
+            "id": "money"
+          }
+        },
+        {
+          "sys": {
+            "type": "Link",
+            "linkType": "Tag",
+            "id": "writing"
+          }
+        }
+      ]
     },
     "sys": {
       "space": {
@@ -861,7 +1065,7 @@
       "id": "afRUBCtRkPCNY6IRyHOP8",
       "type": "Entry",
       "createdAt": "2021-11-15T12:23:06.611Z",
-      "updatedAt": "2021-11-17T08:23:37.988Z",
+      "updatedAt": "2021-11-19T03:00:23.347Z",
       "environment": {
         "sys": {
           "id": "master",
@@ -869,7 +1073,7 @@
           "linkType": "Environment"
         }
       },
-      "revision": 4,
+      "revision": 5,
       "contentType": {
         "sys": {
           "type": "Link",
@@ -969,7 +1173,22 @@
   },
   {
     "metadata": {
-      "tags": []
+      "tags": [
+        {
+          "sys": {
+            "type": "Link",
+            "linkType": "Tag",
+            "id": "apple"
+          }
+        },
+        {
+          "sys": {
+            "type": "Link",
+            "linkType": "Tag",
+            "id": "must"
+          }
+        }
+      ]
     },
     "sys": {
       "space": {
@@ -982,7 +1201,7 @@
       "id": "4eA0h2ikjDdlinaq4KTLGf",
       "type": "Entry",
       "createdAt": "2021-11-15T12:24:22.677Z",
-      "updatedAt": "2021-11-17T08:23:54.679Z",
+      "updatedAt": "2021-11-19T03:00:50.175Z",
       "environment": {
         "sys": {
           "id": "master",
@@ -990,7 +1209,7 @@
           "linkType": "Environment"
         }
       },
-      "revision": 4,
+      "revision": 5,
       "contentType": {
         "sys": {
           "type": "Link",

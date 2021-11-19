@@ -7,7 +7,8 @@ module.exports = {
         sans: ['"Noto Sans"', '"Noto Sans JP"', 'sans-serif'],
       },
       colors: {
-        myBlack: '#261C15',
+        myBlack: '#362316',
+        // myBlack: '#261C15',
         myBrown: '#492C1D',
         myBrownLight: '#8C7051',
         myGray: '#F7F7F2',

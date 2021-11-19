@@ -77,6 +77,9 @@ export default function PostDetails({ post, source }: any) {
                 <p className="ml-2 p-1 text-sm text-myBrown bg-myGray">
                   最終更新：{updatedAt}
                 </p>
+                <ul>
+                  <li>{post.metadata.tags[0].sys.name}</li>
+                </ul>
               </div>
             </div>
             <div className="mb-10">

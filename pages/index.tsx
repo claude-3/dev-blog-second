@@ -21,7 +21,7 @@ const Home: NextPage<any> = ({
             <p className="text-myNavy">新着記事</p>
           </div>
           <div className="">
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 gap-8">
               {newPosts.map((post: any, index: number) => {
                 // 一番新しい記事を飛ばす
                 // if (index === 0 || index >= 5) {

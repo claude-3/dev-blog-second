@@ -30,11 +30,11 @@ const CardThumb: VFC<Props> = (props) => {
     <div className="h-full">
       <Link href={`/posts/${slug}`}>
         <a className="block h-full md:transform hover:translate-y-2 hover:translate-x-2">
-          <div className="overflow-hidden rounded-md shadow-lg h-full">
+          <div className="overflow-hidden rounded-md  h-full">
             <div className="">
               <Image src={imgUrl} alt={imgAlt} width={imgW} height={imgH} />
             </div>
-            <div className="p-6 h-full">
+            <div className="p-1 h-full">
               <p className="tracking-wider mb-1 text-myNavy">
                 {indexFirst && (
                   <span className="tracking-tight text-myOrange mr-2 border border-myOrange px-1">
