@@ -6,7 +6,7 @@ const Header: VFC = () => {
   return (
     <div className="relative z-20">
       <div className="hidden content p-4 md:block">
-        <nav className="flex">
+        <nav className="flex justify-end">
           <Link href="/">
             <a className="p-2 text-title font-bold border-b-4 border-transparent hover:border-myBlack">
               Home

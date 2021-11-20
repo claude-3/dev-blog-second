@@ -15,6 +15,11 @@
     @apply w-full max-w-7xl mx-auto;
   }
 
+  .content-l {
+    @apply w-full mx-auto;
+    max-width: 1400px;
+  }
+
   .text-title {
     @apply font-medium;
   }

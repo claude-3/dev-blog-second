@@ -2,6 +2,7 @@ import { createClient } from 'contentful'
 import Image from 'next/image'
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
+import Head from 'next/head'
 
 import postStyles from '../../styles/post.module.scss'
 import LayoutPost from '../../components/templates/LayoutPost'
@@ -63,6 +64,18 @@ export default function PostDetails({ post, source }: any) {
 
   return (
     <>
+      <Head>
+        <meta name="title" content={title} />
+        <meta name="description" content={description} />
+
+        <meta property="og:url" content="https://dev-blog-second.vercel.app/" />
+        <meta property="og:type" content="article" />
+        <meta property="og:image" content={imgSrc} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+
+        <meta name="twitter:card" content="summary" />
+      </Head>
       <LayoutPost title={title}>
         <div className="p-4">
           <div className={postStyles.articleHeader}>

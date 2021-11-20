@@ -21,6 +21,12 @@ module.exports = {
         top: '540px 1fr',
       },
       transform: ['hover', 'focus'],
+      fontSize: {
+        tsm: '15.625vw',
+        tmd: '17.708vw',
+        tlg: '12rem',
+        txl: '14rem',
+      },
     },
   },
   variants: {
