@@ -13,7 +13,7 @@ const Home: NextPage<any> = ({
   cateThirdPosts,
 }) => {
   return (
-    <Layout title="Home page">
+    <Layout title="Home">
       <section className="py-4">
         <div className="p-4">
           <div className="mb-4 pb-2">

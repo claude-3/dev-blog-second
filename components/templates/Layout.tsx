@@ -24,18 +24,30 @@ const Layout: VFC<Props> = ({ children, title = 'Page title' }) => {
         <title>{title}</title>
       </Head>
       <Header />
-      <div className="py-10 md:mb-16 content-l">
-        <div className="px-4">
-          <h1 className="text-title text-tsm md:text-tmd lg:text-tlg xl:text-txl leading-none tracking-tighter">
+      <div className="py-10 md:mb-6 content-l">
+        <div className="px-4 flex flex-col">
+          <h1 className="inline-block text-title text-tsm md:text-tmd lg:text-tlg xl:text-txl leading-none tracking-tighter">
             ClaudeBlog
           </h1>
+          <div className="flex md:pl-4 leading-none transform">
+            <span className="text-xs md:text-sm lg:text-lg text-myBrown">
+              アフィリエイトについて調べてみる
+            </span>
+            {/* <span className="text-lg lg:text-xl text-myBrown">Money</span>
+            <span className="ml-3 text-lg lg:text-xl text-myBrown">Tech</span>
+            <span className="ml-3 text-lg lg:text-xl text-myBrown">Sales</span>
+            <span className="ml-3 text-lg lg:text-xl text-myBrown">Books</span> */}
+          </div>
+          <div className="w-3/5 ml-auto mt-10 hidden">
+            ここは日本語で説明が入る。ここは日本語で説明が入る。ここは日本語で説明が入る。ここは日本語で説明が入る。ここは日本語で説明が入る。ここは日本語で説明が入る。ここは日本語で説明が入る。ここは日本語で説明が入る。ここは日本語で説明が入る。ここは日本語で説明が入る。ここは日本語で説明が入る。ここは日本語で説明が入る。ここは日本語で説明が入る。ここは日本語で説明が入る。
+          </div>
         </div>
       </div>
       <section className="py-8 bg-myGray">
         <div className="content px-6">
           <div className="mb-4 pb-2">
             <h2 className="text-3xl md:text-5xl text-title rotate-90">
-              Latest article
+              Latest
             </h2>
             <p className="text-myNavy">最新記事</p>
           </div>
@@ -76,13 +88,13 @@ const Layout: VFC<Props> = ({ children, title = 'Page title' }) => {
                             </span>
                             {postProps.publishDate}
                           </p>
-                          <p className="text-title text-lg md:text-3xl mb-3">
+                          <p className="text-title text-lg md:text-2xl mb-3">
                             {postProps.title}
                           </p>
-                          <p className="text-sm md:text-xl mb-3">
+                          <p className="text-sm md:text-lg mb-3">
                             {postProps.description}
                           </p>
-                          <p className="py-1 px-2 text-center rounded border border-myBlack text-xs font-medium tracking-widest">
+                          <p className="py-1 px-2 text-center border border-myBlack text-xs font-medium tracking-widest">
                             {postProps.category}
                           </p>
                         </div>
@@ -96,7 +108,7 @@ const Layout: VFC<Props> = ({ children, title = 'Page title' }) => {
         </div>
       </section>
 
-      <div className="md:mt-10 py-8">
+      <div className="py-8">
         <LContent>
           <div className="grid lg:grid-cols-base gap-10">
             <main className="min-h-screen">{children}</main>

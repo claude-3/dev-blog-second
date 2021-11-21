@@ -11,6 +11,7 @@ module.exports = {
         // myBlack: '#261C15',
         myBrown: '#492C1D',
         myBrownLight: '#8C7051',
+        myBrownGold: '#ad9d4e',
         myGray: '#F7F7F2',
         myOrange: '#F05D23',
         myNavy: '#005E7C',
