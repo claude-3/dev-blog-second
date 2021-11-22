@@ -19,7 +19,7 @@ const Layout: VFC<Props> = ({ children, title = 'Page title' }) => {
   const postsList = useRecoilValue(postsState)
   const latestPost = postsList[0]
   return (
-    <div className="">
+    <div className="relative">
       <Head>
         <title>{title}</title>
       </Head>

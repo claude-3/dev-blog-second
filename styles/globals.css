@@ -23,4 +23,8 @@
   .text-title {
     @apply font-medium;
   }
+
+  .header-scroll {
+    @apply md:shadow md:bg-white md:bg-opacity-90;
+  }
 }
