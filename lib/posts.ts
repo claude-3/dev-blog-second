@@ -9,6 +9,26 @@ export const getAllPostsData = async () => {
   return res.items
 }
 
+export const getPostDataBySlug = async (params: any) => {
+  const client = await getClient()
+  const res = await client.getEntries({
+    content_type: 'blogPost',
+    'fields.slug': params.slug,
+  })
+  // res.items : 配列に1つだけオブジェクトが入った状態（なので res.items[0] が該当のオブジェクトになる）
+  return res.items[0]
+}
+
+export const getPostDataById = async (id: any) => {
+  const client = await getClient()
+  const res = await client.getEntries({
+    content_type: 'blogPost',
+    'sys.id': id,
+  })
+  // res.items : 配列に1つだけオブジェクトが入った状態（なので res.items[0] が該当のオブジェクトになる）
+  return res.items[0]
+}
+
 export const getNewPostsData = async (limit = 6, skip = 0) => {
   const client = await getClient()
   const res = await client.getEntries({

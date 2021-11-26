@@ -25,6 +25,6 @@
   }
 
   .header-scroll {
-    @apply md:shadow md:bg-white md:bg-opacity-90;
+    @apply md:shadow bg-white md:bg-opacity-90;
   }
 }

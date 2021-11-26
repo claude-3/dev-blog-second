@@ -67,7 +67,35 @@ const Home: NextPage<any> = ({
           </div>
           <div className="">
             <div className="grid md:grid-cols-3 gap-3">
-              <p>工事中...</p>
+              {cateFirstPosts.map((post: any, index: number) => {
+                const postProps = {
+                  number: index,
+                  id: post.sys.id,
+                  slug: post.fields.slug,
+                  imgUrl: `https:${post.fields.eyecatch.fields.file.url}`,
+                  imgAlt: post.fields.eyecatch.fields.description,
+                  imgW: post.fields.eyecatch.fields.file.details.image.width,
+                  imgH: post.fields.eyecatch.fields.file.details.image.height,
+                  publishDate: new Date(
+                    post.fields.publishDate
+                  ).toLocaleDateString(),
+                  title: post.fields.title,
+                  category: post.fields.category.fields.name,
+                }
+                return (
+                  <CardThumb
+                    key={postProps.id}
+                    slug={postProps.slug}
+                    imgUrl={postProps.imgUrl}
+                    imgAlt={postProps.imgAlt}
+                    imgW={postProps.imgW}
+                    imgH={postProps.imgH}
+                    publishDate={postProps.publishDate}
+                    title={postProps.title}
+                    category={postProps.category}
+                  />
+                )
+              })}
             </div>
           </div>
         </div>
@@ -82,7 +110,35 @@ const Home: NextPage<any> = ({
           </div>
           <div className="">
             <div className="grid md:grid-cols-3 gap-3">
-              <p>工事中...</p>
+              {cateSecondPosts.map((post: any, index: number) => {
+                const postProps = {
+                  number: index,
+                  id: post.sys.id,
+                  slug: post.fields.slug,
+                  imgUrl: `https:${post.fields.eyecatch.fields.file.url}`,
+                  imgAlt: post.fields.eyecatch.fields.description,
+                  imgW: post.fields.eyecatch.fields.file.details.image.width,
+                  imgH: post.fields.eyecatch.fields.file.details.image.height,
+                  publishDate: new Date(
+                    post.fields.publishDate
+                  ).toLocaleDateString(),
+                  title: post.fields.title,
+                  category: post.fields.category.fields.name,
+                }
+                return (
+                  <CardThumb
+                    key={postProps.id}
+                    slug={postProps.slug}
+                    imgUrl={postProps.imgUrl}
+                    imgAlt={postProps.imgAlt}
+                    imgW={postProps.imgW}
+                    imgH={postProps.imgH}
+                    publishDate={postProps.publishDate}
+                    title={postProps.title}
+                    category={postProps.category}
+                  />
+                )
+              })}
             </div>
           </div>
         </div>
@@ -100,14 +156,10 @@ export async function getStaticProps() {
 
   const postsSet = {
     newPosts: await getNewPostsData(4, 1),
-    cateFirstPosts: await getCategoryPostsData(cate1),
-    cateSecondPosts: await getCategoryPostsData(cate2),
-    cateThirdPosts: await getCategoryPostsData(cate3),
+    cateFirstPosts: await getCategoryPostsData(cate1, 3, 1),
+    cateSecondPosts: await getCategoryPostsData(cate2, 3),
+    cateThirdPosts: await getCategoryPostsData(cate3, 3),
   }
-  // const newPosts = await getNewPostsData()
-  // const cateFirstPosts = await getCategoryPostsData(cate1)
-  // const cateSecondPosts = await getCategoryPostsData(cate2)
-  // const cateThirdPosts = await getCategoryPostsData(cate3)
 
   return {
     props: { ...postsSet },

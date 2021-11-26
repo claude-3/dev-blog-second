@@ -5,14 +5,16 @@ import { useInView } from 'react-intersection-observer'
 import MobileMenus from '../../molecules/MobileMenus'
 
 const Header: VFC = () => {
-  const [ref, inView] = useInView({
-    rootMargin: '0px 0px',
+  const [ref, inView, entry] = useInView({
+    threshold: 0,
+    initialInView: true,
   })
+
   return (
     <>
       <div className="js-header-trigger" ref={ref}></div>
       <div
-        className={`relative z-20 py-4 md:sticky md:top-0 ${
+        className={`relative z-20 py-4 md:sticky md:top-0 transition duration-400 ${
           !inView && 'header-scroll'
         }`}
       >
@@ -30,12 +32,12 @@ const Header: VFC = () => {
             </Link>
             <Link href="/blog">
               <a className="ml-2 p-2 text-title font-bold border-b-4 border-transparent hover:border-myBlack">
-                Blog
+                Category
               </a>
             </Link>
             <Link href="/">
               <a className="ml-2 p-2 text-title font-bold border-b-4 border-transparent hover:border-myBlack">
-                Contact
+                About
               </a>
             </Link>
           </nav>

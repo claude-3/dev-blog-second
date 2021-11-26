@@ -11,7 +11,7 @@ type Props = {
   publishDate: string
   title: string
   category: string
-  indexFirst: boolean
+  indexFirst?: boolean
 }
 
 const CardThumb: VFC<Props> = (props) => {

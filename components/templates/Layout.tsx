@@ -6,6 +6,7 @@ import Sidebar from '../organisms/layout/Sidebar'
 import LContent from './layout/LContent'
 import Link from 'next/link'
 import Image from 'next/image'
+import CardCate from '../molecules/CardCate'
 
 import { useRecoilValue } from 'recoil'
 import { postsState } from '../util/state'
@@ -30,20 +31,39 @@ const Layout: VFC<Props> = ({ children, title = 'Page title' }) => {
             ClaudeBlog
           </h1>
           <div className="flex md:pl-4 leading-none transform">
-            <span className="text-xs md:text-sm lg:text-lg text-myBrown">
-              アフィリエイトについて調べてみる
+            <span className="text-xs md:text-sm lg:text-lg">
+              個人でまっとうに稼ぐことはできるのか
             </span>
-            {/* <span className="text-lg lg:text-xl text-myBrown">Money</span>
-            <span className="ml-3 text-lg lg:text-xl text-myBrown">Tech</span>
-            <span className="ml-3 text-lg lg:text-xl text-myBrown">Sales</span>
-            <span className="ml-3 text-lg lg:text-xl text-myBrown">Books</span> */}
-          </div>
-          <div className="w-3/5 ml-auto mt-10 hidden">
-            ここは日本語で説明が入る。ここは日本語で説明が入る。ここは日本語で説明が入る。ここは日本語で説明が入る。ここは日本語で説明が入る。ここは日本語で説明が入る。ここは日本語で説明が入る。ここは日本語で説明が入る。ここは日本語で説明が入る。ここは日本語で説明が入る。ここは日本語で説明が入る。ここは日本語で説明が入る。ここは日本語で説明が入る。ここは日本語で説明が入る。
           </div>
         </div>
       </div>
-      <section className="py-8 bg-myGray">
+
+      <section className="bg-myGray">
+        <div className="content">
+          <div className="py-14 grid md:grid-cols-3 gap-6">
+            <CardCate
+              category="Affiliate"
+              url="/"
+              title="アフィリエイトってまともなの？"
+              description="アフィリエイトがまっとうな方法で、実際に稼げるものなのか、普通の人でも稼げるものなのか、について調べていこうと思います。"
+            />
+            <CardCate
+              category="Sales"
+              url="/"
+              title="お金を稼ぐには何を知り、身につければいいんだろう？"
+              description="普通の人でも個人でまっとうに稼ぐために必要なことはなんだろう。ものを売る、提案する、魅力を語る。など、普通の人でもできること、クリーンにお金を稼ぐ方法について調べていきます。"
+            />
+            <CardCate
+              category="Make Money"
+              url="/"
+              title="他にまっとうに稼げる副業ってあるの？"
+              description="アフィリエイト以外に個人でもまっとうに稼げる商売、副業があるのか調べてみました。"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* <section className="py-8 bg-myGray">
         <div className="content px-6">
           <div className="mb-4 pb-2">
             <h2 className="text-3xl md:text-5xl text-title rotate-90">
@@ -106,7 +126,7 @@ const Layout: VFC<Props> = ({ children, title = 'Page title' }) => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <div className="py-8">
         <LContent>

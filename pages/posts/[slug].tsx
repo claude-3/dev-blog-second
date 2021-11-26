@@ -3,56 +3,29 @@ import Image from 'next/image'
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
 import Head from 'next/head'
+import Link from 'next/link'
 
 import postStyles from '../../styles/post.module.scss'
 import LayoutPost from '../../components/templates/LayoutPost'
-import Test from '../../components/blog/Test'
+import {
+  getAllPostsData,
+  getPostDataBySlug,
+  getPostDataById,
+} from '../../lib/posts'
 
-const components = {
-  Test,
-}
+// オリジナルコンポーネントを使う場合
+// const components = {
+//   Test,
+// }
 
-const client = createClient({
-  space: process.env.NEXT_PUBLIC_CF_SPACE_ID || 'spaceId',
-  accessToken:
-    process.env.NEXT_PUBLIC_CF_DELIVERY_ACCESS_TOKEN || 'accessToken',
-})
-
-export const getStaticPaths = async () => {
-  const res = await client.getEntries({
-    content_type: 'blogPost',
-  })
-
-  const paths = res.items.map((item: any) => {
-    const slugValue = item.fields.slug
-
-    return {
-      params: { slug: slugValue },
-    }
-  })
-
-  return {
-    paths,
-    fallback: false,
-  }
-}
-
-export async function getStaticProps({ params }: any) {
-  const { items }: any = await client.getEntries({
-    content_type: 'blogPost',
-    'fields.slug': params.slug,
-  })
-
-  const postsList = items
-  const source = items[0].fields.content
-  const mdxSource = await serialize(source)
-
-  return {
-    props: { post: items[0], source: mdxSource },
-  }
-}
-
-export default function PostDetails({ post, source }: any) {
+export default function PostDetails({
+  post,
+  source,
+  prevPage,
+  nextPage,
+  statusOldest,
+  statusLatest,
+}: any) {
   const { eyecatch, title, description } = post.fields
   const category = post.fields.category.fields.name
   const publishDate = new Date(post.fields.publishDate).toLocaleDateString()
@@ -61,6 +34,11 @@ export default function PostDetails({ post, source }: any) {
   const imgW = eyecatch.fields.file.details.image.width
   const imgH = eyecatch.fields.file.details.image.height
   const imgAlt = eyecatch.fields.description
+
+  const prevTitle = prevPage.fields.title
+  const prevSlug = prevPage.fields.slug
+  const nextTitle = nextPage.fields.title
+  const nextSlug = nextPage.fields.slug
 
   return (
     <>
@@ -108,10 +86,80 @@ export default function PostDetails({ post, source }: any) {
             <Image src={imgSrc} width={imgW} height={imgH} alt={imgAlt} />
           </div>
           <div className={postStyles.articleBody}>
-            <MDXRemote {...source} components={components} />
+            {/* <MDXRemote {...source} components={components} /> */}
+            <MDXRemote {...source} />
+          </div>
+          <div className="mt-4 grid grid-cols-2 text-myNavy">
+            <div className="text-left">
+              {!statusOldest && (
+                <Link href={`/posts/${prevSlug}`}>
+                  <a className="hover:underline">前の記事</a>
+                </Link>
+              )}
+            </div>
+            <div className="text-right">
+              {!statusLatest && (
+                <Link href={`/posts/${nextSlug}`}>
+                  <a className="hover:underline">次の記事</a>
+                </Link>
+              )}
+            </div>
           </div>
         </div>
       </LayoutPost>
     </>
   )
+}
+
+export const getStaticPaths = async () => {
+  const res = await getAllPostsData()
+
+  const paths = res.map((item: any) => {
+    const slugValue = item.fields.slug
+
+    return {
+      params: { slug: slugValue },
+    }
+  })
+
+  return {
+    paths,
+    fallback: false,
+  }
+}
+
+export async function getStaticProps({ params }: any) {
+  const item: any = await getPostDataBySlug(params)
+
+  // ====== ↓ページネーション用↓ ======
+  const allPosts = await getAllPostsData()
+  const allPostsIds = await allPosts.map((post: any) => {
+    return post.sys.id
+  })
+  const currentIndex = allPostsIds.indexOf(item.sys.id)
+
+  const prevId = allPostsIds[currentIndex - 1]
+  const prevPage: any = await getPostDataById(prevId)
+
+  const nextId = allPostsIds[currentIndex + 1]
+  const nextPage: any = await getPostDataById(nextId)
+
+  const statusOldest = currentIndex === 0
+  const statusLatest = currentIndex === allPostsIds.length - 1
+  // ====== ↑ページネーション用↑ ======
+
+  const source = item.fields.content
+  const mdxSource = await serialize(source)
+
+  return {
+    props: {
+      post: item,
+      source: mdxSource,
+      prevPage: prevPage,
+      nextPage: nextPage,
+      allPostsIds,
+      statusLatest,
+      statusOldest,
+    },
+  }
 }
