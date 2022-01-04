@@ -16,7 +16,7 @@ const Home: NextPage<any> = ({
         <div className="p-4">
           <div className="mb-4 pb-2">
             <h2 className="text-5xl text-title rotate-90">Articles</h2>
-            <p className="text-myNavy">新着記事</p>
+            <p className="text-myPrimery">新着記事</p>
           </div>
           <div className="">
             <div className="grid md:grid-cols-2 gap-8">

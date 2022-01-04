@@ -23,7 +23,7 @@ const Sidebar: VFC = () => {
                 <Link href={`/posts/${post.fields.slug}`}>
                   <a className="block transform hover:translate-x-3">
                     <div>
-                      <p className="text-xs text-myNavy">
+                      <p className="text-xs text-mySecondary">
                         {new Date(post.fields.publishDate).toLocaleDateString()}
                       </p>
                       <p className="text-sm font-bold">{post.fields.title}</p>

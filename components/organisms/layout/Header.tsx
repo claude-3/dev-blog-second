@@ -13,15 +13,15 @@ const Header: VFC = () => {
   return (
     <>
       <div className="js-header-trigger" ref={ref}></div>
-      <div
-        className={`relative z-20 py-4 md:sticky md:top-0 transition duration-400 ${
+      <header
+        className={`relative z-20 py-4 md:sticky md:top-0 transition duration-400  ${
           !inView && 'header-scroll'
         }`}
       >
         <div className="hidden content px-4 md:flex md:items-center">
           <Link href="/">
-            <a className="hidden text-xl font-bold hover:opacity-80">
-              ClaudeBlog
+            <a className="text-2xl font-bold hover:opacity-80">
+              Claude<span className="text-myOrange">B</span>log
             </a>
           </Link>
           <nav className="flex justify-end ml-auto">
@@ -43,7 +43,7 @@ const Header: VFC = () => {
           </nav>
         </div>
         <MobileMenus />
-      </div>
+      </header>
     </>
   )
 }

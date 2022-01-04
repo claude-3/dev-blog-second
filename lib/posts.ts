@@ -19,6 +19,14 @@ export const getPostDataBySlug = async (params: any) => {
   return res.items[0]
 }
 
+export const getTotalPostsNumber = async () => {
+  const client = await getClient()
+  const res = await client.getEntries({
+    content_type: 'blogPost',
+  })
+  return res.total
+}
+
 export const getPostDataById = async (id: any) => {
   const client = await getClient()
   const res = await client.getEntries({

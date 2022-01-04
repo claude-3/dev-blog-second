@@ -19,7 +19,8 @@
     "react-markdown": "^7.1.0",
     "recoil": "^0.5.2",
     "sass": "^1.43.4",
-    "sharp": "^0.29.3"
+    "sharp": "^0.29.3",
+    "swr": "^1.0.1"
   },
   "devDependencies": {
     "@types/node": "16.11.7",

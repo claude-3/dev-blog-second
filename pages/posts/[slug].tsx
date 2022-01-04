@@ -1,4 +1,3 @@
-import { createClient } from 'contentful'
 import Image from 'next/image'
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
@@ -130,6 +129,8 @@ export const getStaticPaths = async () => {
 
 export async function getStaticProps({ params }: any) {
   const item: any = await getPostDataBySlug(params)
+  const source = item.fields.content
+  const mdxSource = await serialize(source)
 
   // ====== ↓ページネーション用↓ ======
   const allPosts = await getAllPostsData()
@@ -147,9 +148,6 @@ export async function getStaticProps({ params }: any) {
   const statusOldest = currentIndex === 0
   const statusLatest = currentIndex === allPostsIds.length - 1
   // ====== ↑ページネーション用↑ ======
-
-  const source = item.fields.content
-  const mdxSource = await serialize(source)
 
   return {
     props: {

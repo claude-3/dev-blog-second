@@ -25,43 +25,40 @@ const Layout: VFC<Props> = ({ children, title = 'Page title' }) => {
         <title>{title}</title>
       </Head>
       <Header />
-      <div className="py-10 md:mb-6 content-l">
-        <div className="px-4 flex flex-col">
-          <h1 className="inline-block text-title text-tsm md:text-tmd lg:text-tlg xl:text-txl leading-none tracking-tighter">
-            ClaudeBlog
-          </h1>
-          <div className="flex md:pl-4 leading-none transform">
-            <span className="text-xs md:text-sm lg:text-lg">
-              個人でまっとうに稼ぐことはできるのか
-            </span>
+      <div className="hero-area md:mb-6">
+        <div className="mb-4 py-12 content">
+          <div className="px-12">
+            <h1 className="top-title">
+              アフィリエイトはまっとうなビジネスなのか。今でも稼げるのか。もしそうなら、誰でもできるものなのか。10年ぶりに調べてみた。
+            </h1>
+          </div>
+        </div>
+
+        <div className="">
+          <div className="content">
+            <div className="mb-12 px-4 xl:px-0 grid md:grid-cols-3 gap-6">
+              <CardCate
+                category="Affiliate"
+                url="/"
+                title="アフィリエイトってまともなの？"
+                description="アフィリエイトがまっとうな方法で、実際に稼げるものなのか、普通の人でも稼げるものなのか、について調べていこうと思います。"
+              />
+              <CardCate
+                category="Sales"
+                url="/"
+                title="お金を稼ぐには何を知り、身につければいいんだろう？"
+                description="普通の人でも個人でまっとうに稼ぐために必要なことはなんだろう。ものを売る、提案する、魅力を語る。など、普通の人でもできること、クリーンにお金を稼ぐ方法について調べていきます。"
+              />
+              <CardCate
+                category="Make Money"
+                url="/"
+                title="他にまっとうに稼げる副業ってあるの？"
+                description="アフィリエイト以外に個人でもまっとうに稼げる商売、副業があるのか調べてみました。"
+              />
+            </div>
           </div>
         </div>
       </div>
-
-      <section className="bg-myGray">
-        <div className="content">
-          <div className="py-14 grid md:grid-cols-3 gap-6">
-            <CardCate
-              category="Affiliate"
-              url="/"
-              title="アフィリエイトってまともなの？"
-              description="アフィリエイトがまっとうな方法で、実際に稼げるものなのか、普通の人でも稼げるものなのか、について調べていこうと思います。"
-            />
-            <CardCate
-              category="Sales"
-              url="/"
-              title="お金を稼ぐには何を知り、身につければいいんだろう？"
-              description="普通の人でも個人でまっとうに稼ぐために必要なことはなんだろう。ものを売る、提案する、魅力を語る。など、普通の人でもできること、クリーンにお金を稼ぐ方法について調べていきます。"
-            />
-            <CardCate
-              category="Make Money"
-              url="/"
-              title="他にまっとうに稼げる副業ってあるの？"
-              description="アフィリエイト以外に個人でもまっとうに稼げる商売、副業があるのか調べてみました。"
-            />
-          </div>
-        </div>
-      </section>
 
       {/* <section className="py-8 bg-myGray">
         <div className="content px-6">
